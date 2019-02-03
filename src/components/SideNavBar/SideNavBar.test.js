@@ -10,7 +10,7 @@ it('renders without crashing', () => {
 });
 
 it('contains a list item of', () => {
-  const listItem  = <li>List item 4</li>;
+  const listItem  = <li>List item 1</li>;
   const wrapper = shallow(<SideNavBar />);
   expect(wrapper.contains(listItem)).toEqual(true);
 });
