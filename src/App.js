@@ -6,14 +6,14 @@ import Content from './components/Content/Content';
 
 const MainLayout = styled.div`
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 15% 75%;
 `;
 
 class App extends Component {
   render() {
     return (
       <MainLayout>
-        <SideNavBar />
+        {/* <SideNavBar /> */}
         <Content />
       </MainLayout>
     );

@@ -1,9 +1,10 @@
 import React from 'react';
+import Table from '../Table/Table';
 
 function Results() {
     return (
         <div>
-            <p>This will be list of results</p>
+            <Table />
         </div>
     )
 }
