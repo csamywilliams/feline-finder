@@ -1,12 +1,14 @@
 import React from 'react';
-import ReactTable from "react-table";
-import 'react-table/react-table.css';
+import TableHeader from '../TableHeader/TableHeader';
+import TableRow from '../TableRow/TableRow';
+import PropTypes from "prop-types";
 
 class Table extends React.Component {
 
     render() { 
 
         const data = [ {
+            id: 0,
             name: 'Blackie',
             age: 2,
             measurement: 'Year',
@@ -22,6 +24,7 @@ class Table extends React.Component {
             missing_time: "5 days"
         },
         {
+            id: 1,
             name: 'Charlie',
             age: 2,
             measurement: 'Year',
@@ -35,40 +38,56 @@ class Table extends React.Component {
             neutored: false,
             microchip: true,
             missing_time: "5 days"
-        }]
+        }];
+
 
         const columns = [{
-                Header: 'Name',
+                name: 'Name',
                 accessor: 'name'
             }, {
-                Header: 'Age',
-                accessor: 'age',
-                Cell: props => <span className='number'>{props.value}</span> 
+                name: 'Age',
+                accessor: 'age'
             },
             {
-                Header: 'Colour',
+                name: 'Colour',
                 accessor: 'colour',
             },
             {
-                Header: 'Location',
+                name: 'Location',
                 accessor: 'location',
             },
             {
-                Header: 'Breed',
+                name: 'Breed',
                 accessor: 'breed',
             },
             {
-                Header: 'Microchip',
-                accessor: 'microchip',
-                Cell: ({ value }) => String(value)
+                name: 'Microchip',
+                accessor: 'microchip'
             }
-        ]
-         
-          return <ReactTable
-            showPagination={true}
-            data={data}
-            columns={columns}
-          />
+        ];
+
+        const rows = data.map((item) => {
+
+            return (
+                <TableRow key={item.id} row={item} columns={columns} />
+            )
+
+        });
+
+        const headers = columns.map((item, index) => {
+
+            return (
+                <TableHeader key={index} name={item.name} />
+            )
+
+        });
+
+        return (
+            <table>
+                <thead><tr>{headers}</tr></thead>
+                <tbody>{rows}</tbody>
+            </table>
+        )
     }
 }
 
