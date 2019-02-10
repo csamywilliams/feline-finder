@@ -1,18 +1,30 @@
 import React from 'react';
+import styled from 'styled-components';
 import TableCell from '../TableCell/TableCell';
+
 
 class TableRow extends React.Component {
 
     render() { 
 
-        var cells = Object.keys(this.props.row).map((prop, value) => {
+        const Tr = styled.tr`
+            &:nth-child(even) {
+                background: #ccc;
+            }
+
+            &:nth-child(odd) {
+                background: #fff;
+            }
+        `;
+
+        const cells = Object.keys(this.props.row).map((prop, value) => {
             return <TableCell key={value} value={this.props.row[prop]} />
         });
 
         return (
-            <tr>
+            <Tr>
                 {cells}
-            </tr>
+            </Tr>
         )
     }
 }

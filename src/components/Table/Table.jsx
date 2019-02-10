@@ -1,7 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
 import TableHeader from '../TableHeader/TableHeader';
 import TableRow from '../TableRow/TableRow';
-import PropTypes from "prop-types";
+
+const TableStyle = styled.table`
+    border-collapse: collapse;
+    border-spacing: 0;
+`;
 
 class Table extends React.Component {
 
@@ -66,14 +71,6 @@ class Table extends React.Component {
             }
         ];
 
-        const rows = data.map((item) => {
-
-            return (
-                <TableRow key={item.id} row={item} columns={columns} />
-            )
-
-        });
-
         const headers = columns.map((item, index) => {
 
             return (
@@ -82,11 +79,21 @@ class Table extends React.Component {
 
         });
 
+        const rows = data.map((item) => {
+            const filterItem = columns.map((col) => {
+                if(item.hasOwnProperty(col.accessor)) return item[col.accessor];
+            });
+
+            return (
+                <TableRow key={item.id} row={filterItem} columns={columns} />
+            )
+        });
+
         return (
-            <table>
+            <TableStyle>
                 <thead><tr>{headers}</tr></thead>
                 <tbody>{rows}</tbody>
-            </table>
+            </TableStyle>
         )
     }
 }
