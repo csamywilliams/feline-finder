@@ -9,11 +9,11 @@ class TableRow extends React.Component {
 
         const Tr = styled.tr`
             &:nth-child(even) {
-                background: #ccc;
+                background: #E5E8EC;
             }
 
             &:nth-child(odd) {
-                background: #fff;
+                background: #FFFFFF;
             }
         `;
 

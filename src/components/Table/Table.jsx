@@ -4,8 +4,11 @@ import TableHeader from '../TableHeader/TableHeader';
 import TableRow from '../TableRow/TableRow';
 
 const TableStyle = styled.table`
+    width: 80%;
     border-collapse: collapse;
     border-spacing: 0;
+    margin: 15px;
+    text-align: center;
 `;
 
 class Table extends React.Component {
