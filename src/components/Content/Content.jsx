@@ -5,7 +5,7 @@ import Results from '../Results/Results';
 
 const ContentLayout = styled.div`
     background-color: #F4F6F9;
-    width: 100vw;
+    width: 85vw;
     height: 100vh;
 `;
 
