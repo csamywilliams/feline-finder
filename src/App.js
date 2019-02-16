@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
+import Header from './components/Header/Header';
 import SideNavBar from './components/SideNavBar/SideNavBar';
 import Content from './components/Content/Content';
 
@@ -12,10 +12,13 @@ const MainLayout = styled.div`
 class App extends Component {
   render() {
     return (
-      <MainLayout>
-        <SideNavBar />
-        <Content />
-      </MainLayout>
+      <div>
+        <Header />
+        <MainLayout>
+          <SideNavBar />
+          <Content />
+        </MainLayout>
+      </div>
     );
   }
 }

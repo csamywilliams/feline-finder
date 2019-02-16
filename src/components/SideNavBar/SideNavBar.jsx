@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
-    background-color: #d0d4c7;
+    background-color: #f299ce;
     height: 100%;
 `;
 
