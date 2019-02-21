@@ -5,6 +5,10 @@ import TableCell from '../TableCell/TableCell';
 
 class TableRow extends React.Component {
 
+    showRecord(record) {
+        //open modal using the record details
+    }
+
     render() { 
 
         const Tr = styled.tr`
@@ -22,7 +26,7 @@ class TableRow extends React.Component {
         });
 
         return (
-            <Tr>
+            <Tr onClick={()=>this.showRecord(this.props.row)}>
                 {cells}
             </Tr>
         )
