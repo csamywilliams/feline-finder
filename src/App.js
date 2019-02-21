@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {AppContext, constants} from './context/AppContext';
 import styled from 'styled-components';
 import Header from './components/Header/Header';
 import SideNavBar from './components/SideNavBar/SideNavBar';
@@ -10,14 +11,26 @@ const MainLayout = styled.div`
 `;
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      type: constants.cat
+    }
+  }
+
   render() {
+
     return (
       <div>
-        <Header />
-        <MainLayout>
-          <SideNavBar />
-          <Content />
-        </MainLayout>
+        <AppContext.Provider value={this.state.type}>
+          <Header  />
+          <MainLayout>
+            <SideNavBar />
+            <Content />
+          </MainLayout>
+        </AppContext.Provider>
       </div>
     );
   }

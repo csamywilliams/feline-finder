@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import TableHeader from '../TableHeader/TableHeader';
 import TableRow from '../TableRow/TableRow';
+import { constants } from '../../context/AppContext';
+
 
 const TableStyle = styled.table`
     width: 80%;
@@ -15,39 +17,7 @@ class Table extends React.Component {
 
     render() { 
 
-        const data = [ {
-            id: 0,
-            name: 'Blackie',
-            age: 2,
-            measurement: 'Year',
-            colour: 'Black and White', 
-            location: 'Swansea',
-            postcode: 'SA7',
-            breed: 'dsh',
-            type: 'cat',
-            stray: false,
-            feral: false,
-            neutored: false,
-            microchip: true,
-            missing_time: "5 days"
-        },
-        {
-            id: 1,
-            name: 'Charlie',
-            age: 2,
-            measurement: 'Year',
-            colour: 'Black and White', 
-            location: 'Swansea',
-            postcode: 'SA7',
-            breed: 'dsh',
-            type: 'cat',
-            stray: false,
-            feral: false,
-            neutored: false,
-            microchip: true,
-            missing_time: "5 days"
-        }];
-
+        const data = constants.cat.data;
 
         const columns = [{
                 name: 'Name',
@@ -55,6 +25,10 @@ class Table extends React.Component {
             }, {
                 name: 'Age',
                 accessor: 'age'
+            },
+            {
+                name: 'Sex',
+                accessor: 'sex'
             },
             {
                 name: 'Colour',
