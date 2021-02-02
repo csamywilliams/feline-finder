@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const MapStyled = styled.div`
-	height: 180px;
-	outline: 1px solid red;
+	height: 100vh;
+	width: 100vh;
+	position: relative;
 `;
 
 export default MapStyled;

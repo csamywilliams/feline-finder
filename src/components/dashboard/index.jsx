@@ -1,11 +1,11 @@
 import React from 'react';
-import PigeonMap from 'components/PigeonMap';
+import GoogleMap from 'components/GoogleMap';
 
 const Dashboard = () => {
 	return (
 		<div>
 			<h1>Feline Finder</h1>
-			<PigeonMap />
+			<GoogleMap />
 		</div>
 	);
 };

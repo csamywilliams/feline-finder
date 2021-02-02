@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Dashboard from 'src/components/dashboard';
+import Dashboard from 'components/Dashboard';
 import theme from './theme.js';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './global.js';
